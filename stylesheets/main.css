@@ -1,4 +1,3 @@
-
 nav h1 {
     color: white;
 }
@@ -18,15 +17,9 @@ nav h1 {
     margin-left: 5px;
 }
 
-/* table,td{
-    border: 1px black solid!important;
-    
-} */
-/* tr{
-    border: 0px;
+#map {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 180px;
 }
-
-td{
-    height: 10px;
-    width: 50px;
-} */

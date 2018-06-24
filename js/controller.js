@@ -68,9 +68,17 @@ function printWeather(data) {
         direction = "North";
     }
     document.querySelector('#direction').innerText = direction
+    initMap(data.coord.lat,data.coord.lon);
 
 
 
 
+}
 
+function initMap(lat,lon) {
+    var map = new MapmyIndia.Map("map",{ center:[lat,lon],zoomControl: true,hybrid:true });
+    // console.log(map);
+
+    document.querySelector('#map');
+    // marker.bindPopup("<b>Hey There!</b><br>This is the place u searched for.").openPopup();
 }
