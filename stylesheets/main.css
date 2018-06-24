@@ -1,0 +1,32 @@
+
+nav h1 {
+    color: white;
+}
+
+.container {
+    margin-top: 10px;
+}
+
+.imageRecieved {
+    margin: 5px;
+    width: 20em;
+    height: 11.25em;
+    border: 3px black solid;
+}
+
+.form-group input {
+    margin-left: 5px;
+}
+
+/* table,td{
+    border: 1px black solid!important;
+    
+} */
+/* tr{
+    border: 0px;
+}
+
+td{
+    height: 10px;
+    width: 50px;
+} */

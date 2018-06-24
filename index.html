@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Weather App</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <script src="./js/controller.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="./stylesheets/main.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark bg-dark">
+        <!-- Navbar content -->
+        <h1>Weather App</h1>
+    </nav>
+    <div class="container">
+        <div class="form-inline">
+            <div class="form-group mx-sm-3 mb-2">
+                <span>Enter City :</span>
+                <input type="text" class="form-control" id="cityName" placeholder="Enter Search Term">
+            </div>
+            <div class="form-group mx-sm-3 ">
+                <button id="searchButton" class="form-control btn btn-primary mb-2">Search</button>
+            </div>
+        </div>
+
+        <table class="table-striped table table-bordered" id="imageDiv">
+            <tr>
+                <td>Average temparature</td>
+                <td id="avgTemp"></td>
+            </tr>
+            <tr>
+                <td>Minimum temparature</td>
+                <td id="minTemp"></td>
+            </tr>
+            <tr>
+                <td>Maximum temparature</td>
+                <td id="maxTemp"></td>
+            </tr>
+            <tr>
+                <td>Clouds</td>
+                <td id="clouds"></td>
+            </tr>
+            <tr>
+                <td>Humidity</td>
+                <td id="humidity"></td>
+            </tr>
+            <tr>
+                <td>Weather</td>
+                <td id="weather"></td>
+            </tr>
+            <tr>
+                <td>Wind Speed</td>
+                <td id="windSpeed"></td>
+            </tr>
+            <tr>
+                <td>Direction of wind</td>
+                <td id="direction"></td>
+            </tr>
+            <!-- <tr>
+                <td>Speed of wind gust</td>
+                <td id="gustSpeed"></td>
+            </tr> -->
+        </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
