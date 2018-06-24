@@ -1,10 +1,9 @@
 window.addEventListener('load', init);
-var mymap;
+var map;
 function init() {
     bindEvents();
     fillDefault();
-    callAPI();
-    mymap = L.map('mapid').setView([28.6139,77.2090], 13);
+    isRunFlag=1;
 }
 
 function bindEvents() {
@@ -81,42 +80,17 @@ function printWeather(data) {
 
 }
 
-// function initMap(lat, lon) {
-
-//     var map = new MapmyIndia.Map("map", {
-//         center: [lat, lon],
-//         zoomControl: true,
-//         hybrid: true,
-//         search: true,
-//         location: true
-//       });
-
-//      var marker = L.marker([lat,lon]).addTo(map);
-//     // console.log(map);
-
-//     document.querySelector('#map');
-//     // marker.bindPopup("<b>Hey There!</b><br>This is the place u searched for.").openPopup();
-// }
-
 function initMap(lat, lon) {
-    mymap.setView([lat,lon],13);
+        map = new MapmyIndia.Map("map", {
+        center: [lat, lon],
+        zoomControl: true,
+        hybrid: true,
+        search: true,
+        location: true
+      });
+     var marker = L.marker([lat,lon]).addTo(map);
+    // console.log(map);
 
-    L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-        attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(mymap);
-
-
-    L.marker([lat,lon]).addTo(mymap)
-        .bindPopup("<b>Hello world!</b><br />I am a popup.").openPopup();
-
-    var popup = L.popup();
-
-    function onMapClick(e) {
-        popup
-            .setLatLng(e.latlng)
-            .setContent("You clicked the map at " + e.latlng.toString())
-            .openOn(mymap);
-    }
-
-    mymap.on('click', onMapClick);
+    document.querySelector('#map');
+    // marker.bindPopup("<b>Hey There!</b><br>This is the place u searched for.").openPopup();
 }
