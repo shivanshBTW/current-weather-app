@@ -80,11 +80,16 @@ function printWeather(data) {
 }
 
 function initMap(lat, lon) {
+    
     var map = new MapmyIndia.Map("map", {
         center: [lat, lon],
         zoomControl: true,
-        hybrid: true
-    });
+        hybrid: true,
+        search: true,
+        location: true
+      });
+      
+     var marker = L.marker([lat,lon]).addTo(map);
     // console.log(map);
 
     document.querySelector('#map');
