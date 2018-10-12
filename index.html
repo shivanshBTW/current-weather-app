@@ -6,7 +6,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
+
     <script src="./js/controller.js"></script>
     <!-- Bootstrap CSS -->
 
@@ -16,12 +16,16 @@
     <link rel="stylesheet" href="./stylesheets/main.css">
 
 
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ==" crossorigin="">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css" integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+        crossorigin="">
 
 
-    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw==" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet@1.3.1/dist/leaflet.js" integrity="sha512-/Nsx9X4HebavoBvEBuyp3I7od5tA0UzAxs+j83KgC8PU0kgB4XiK4Lfe4y4cgBtaRJQEIFCW+oC506aPT2L1zw=="
+        crossorigin=""></script>
 
-    
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+        crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -30,15 +34,53 @@
         <h1>Weather App</h1>
     </nav>
     <div class="container">
-        <div class="form-inline">
-            <div class="form-group mx-sm-3 mb-2">
-                <span>Enter City :</span>
-                <input type="text" class="form-control" id="cityName" placeholder="Enter Search Term">
+
+        <div class="container-fluid dropdown">
+            <select class="btn btn-secondary dropdown-toggle" name="" id="main-dropdown">
+                <option value="1"><a class="dropdown-item" href="#">Search By City Name</a></option>
+                <option value="2"><a class="dropdown-item" href="#">Search By Latitude and Longitude</a></option>
+                <option value="3"><a class="dropdown-item" href="#">Search By GPS location</a></option>
+            </select>
+        </div>
+
+        <div>
+            <div class="form-inline hidethese hideit" id="searchByName">
+                <div class="form-group mx-sm-3 mb-2">
+                    <span>Enter City :</span>
+                    <input type="text" class="form-control" id="cityName" placeholder="Enter Search Term">
+                </div>
+                <div class="form-group mx-sm-3 ">
+                    <button id="searchButton" class="form-control btn btn-primary mb-2">Search</button>
+                </div>
             </div>
-            <div class="form-group mx-sm-3 ">
-                <button id="searchButton" class="form-control btn btn-primary mb-2">Search</button>
+
+            <div class="form-inline hidethese hideit" id="searchByLatLon">
+                <div class="form-group mx-sm-3 mb-2">
+                    <span>Enter Latitude :</span>
+                    <input type="text" class="form-control" id="latitude" placeholder="Enter Search Term">
+                </div>
+
+                <div class="form-group mx-sm-3 mb-2">
+                    <span>Enter Longitude :</span>
+                    <input type="text" class="form-control" id="longitude" placeholder="Enter Search Term">
+                </div>
+
+                <div class="form-group mx-sm-3 ">
+                    <button id="searchButtonLatLon" class="form-control btn btn-primary mb-2">Search</button>
+                </div>
+
+            </div>
+
+            <div class="form-inline hidethese hideit" id="searchByGPS">
+                <div class="form-group mx-sm-3 ">
+                    <!-- <i class="fas fa-map-marker-alt"></i>
+                                <i class="far fa-map-marker-alt"></i> -->
+                    <button id="currentLocationLatLon" class="form-control fas fa-map-marker-alt btn btn-primary mb-2"></button>
+                    <p id="compatibilityDisplay"></p>
+                </div>
             </div>
         </div>
+
 
         <table class="table-striped table table-bordered" id="imageDiv">
             <tr>
@@ -80,7 +122,7 @@
         </table>
 
         <div id="mapid">Maps are currently only available for Indian Subcontinent</div>
-        
+
 
     </div>
     <!-- Optional JavaScript -->

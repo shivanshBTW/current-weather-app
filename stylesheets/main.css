@@ -23,3 +23,15 @@ nav h1 {
     width: 100%;
     height: 400px;
 }
+
+.dropdown{
+    margin: 10px;
+}
+
+.hideit{
+    display: none;
+}
+
+.showit{
+    display: inline;
+}
